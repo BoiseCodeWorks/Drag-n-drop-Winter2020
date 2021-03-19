@@ -1,8 +1,10 @@
 import { AppState } from '../AppState'
 
 class ItemService {
-  setItemToMove(item) {
+  setItemToMove(item, oldRoomId) {
     AppState.tempItem = item
+    // your item will likely have the old room's id already on it.
+    AppState.tempItem.oldRoomId = oldRoomId
   }
 
   // this method if you are going to send objects through the AppState
